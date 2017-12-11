@@ -1,0 +1,11 @@
+.new-game-container {
+    padding-top: 3px;
+}
+
+div a {
+    color: black;
+}
+
+a:hover {
+    color: maroon;
+}

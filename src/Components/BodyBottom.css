@@ -1,0 +1,11 @@
+.body-bottom-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.body-bottom-container::after {
+    content: '';
+    display: table;
+    clear: both;
+}

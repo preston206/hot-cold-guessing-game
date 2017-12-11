@@ -1,0 +1,21 @@
+.player-feedback {
+    border: 2px solid black;
+    width: 100%;
+    padding: 10px;
+}
+
+.player-guess-count {
+    margin: 0;
+    font-weight: bold;
+}
+
+.player-feedback::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.player-guess-history {
+    margin: 10px 0 0 0;
+    font-weight: bold;
+}
