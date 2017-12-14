@@ -1,12 +1,7 @@
 .player-feedback {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100%;
     padding: 10px;
-}
-
-.player-guess-count {
-    margin: 0;
-    font-weight: bold;
 }
 
 .player-feedback::after {
@@ -15,7 +10,38 @@
     clear: both;
 }
 
-.player-guess-history {
-    margin: 10px 0 0 0;
+.player-guess-count {
+    margin: 12px 0 0 0;
     font-weight: bold;
+    color: lightskyblue;
+    font-size: 2em;
 }
+
+.player-guess-history {
+    margin: 15px 0 0 0;
+    font-weight: bold;
+    color: lightskyblue;
+    font-size: 2em;
+}
+
+.guess-count-props,
+.guess-history-props {
+    margin-top: 12px;
+    color: white;
+    font-size: 2em;
+    border: 1px solid gray;
+    width: 70%;
+    /* height: 40px; */
+    display: inline-block;
+    text-align: left;
+    overflow-y: hidden;
+    overflow-x: auto;
+    /* overflow-wrap: none; */
+    white-space: nowrap;
+}
+
+
+/* .guess-history-props {
+    color: white;
+    font-size: 2em;
+} */

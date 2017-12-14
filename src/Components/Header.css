@@ -2,7 +2,21 @@
     background-color: #222;
     height: 150px;
     padding: 5px;
-    border-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
     margin-bottom: 15px;
-    margin-top: 5px;
+    /* margin-top: 10px; */
+}
+
+.top-row-header {
+    margin-top: 10px;
+    background-color: #222;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.top-row-header::after {
+    content: '';
+    display: table;
+    clear: both;
 }

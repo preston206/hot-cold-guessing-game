@@ -1,24 +1,4 @@
-.logo {
-    animation: logo-spin infinite 15s linear;
-    height: 25px;
-    margin-left: 4px;
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .title {
-    /* margin-bottom: 0.3em; */
+    margin-top: 0;
     color: lightskyblue;
-}
-
-.subtitle {
-    color: maroon;
-    display: inline-block;
 }

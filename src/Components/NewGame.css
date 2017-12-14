@@ -1,11 +1,14 @@
 .new-game-container {
-    padding-top: 3px;
+    padding-top: 6px;
+    padding-right: 12px;
 }
 
 div a {
-    color: black;
+    color: lightskyblue;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover {
-    color: maroon;
+    color: white;
 }
