@@ -12,10 +12,17 @@ export default class App extends Component {
     super(props);
     this.state = {
       randomNumber: Math.floor(Math.random() * 100),
-      count: 0,
+      count: null,
       history: [],
-      feedback: "let's play!"
+      feedback: "let's play!",
+      input: ''
     };
+  }
+
+  updateInput(input) {
+    this.setState({
+      input
+    });
   }
 
   checkAnswer(answer) {
@@ -27,9 +34,19 @@ export default class App extends Component {
         feedback: "You Won!"
       });
     }
-    else if ((answer >= r-10) && (answer <= r+10)) {
+    else if ((answer >= r - 10) && (answer <= r + 10)) {
       this.setState({
         feedback: "Hot"
+      });
+    }
+    else if (answer >= r - 20 && answer < r - 10) {
+      this.setState({
+        feedback: "Warm"
+      });
+    }
+    else if (answer <= r + 20 && answer > r + 10) {
+      this.setState({
+        feedback: "Warm"
       });
     }
     else {
@@ -37,13 +54,13 @@ export default class App extends Component {
         feedback: "Cold"
       });
     }
-
   }
 
   play(playerInput) {
 
     this.setState({
-      history: [...this.state.history, playerInput]
+      history: [...this.state.history, playerInput],
+      input: playerInput
     });
 
     this.setState((prevState) => {
@@ -57,15 +74,26 @@ export default class App extends Component {
     console.log("the state is:", this.state);
   }
 
+  restart() {
+    this.setState({
+      randomNumber: Math.floor(Math.random() * 100),
+      count: null,
+      history: [],
+      feedback: "let's play!",
+      input: ''
+    });
+    document.getElementById('numberInput').focus();
+  }
+
   render() {
     let guesses = this.state.history.map((guess, index) =>
       <span key={index}>{guess} </span>
     );
 
     return (
-      <div className="App">
-        <Header feedback={this.state.feedback} />
-        <Body play={this.play.bind(this)} />
+      <div className="app">
+        <Header feedback={this.state.feedback} restart={this.restart.bind(this)} />
+        <Body play={this.play.bind(this)} input={this.state.input} updateInput={this.updateInput.bind(this)} />
         <Footer guessHistory={guesses} guessCount={this.state.count} />
       </div>
     );

@@ -15,6 +15,7 @@
     font-weight: bold;
     color: lightskyblue;
     font-size: 2em;
+    /* width: 30%; */
 }
 
 .player-guess-history {
@@ -22,14 +23,17 @@
     font-weight: bold;
     color: lightskyblue;
     font-size: 2em;
+    /* width: 30%; */
 }
 
 .guess-count-props,
 .guess-history-props {
     margin-top: 12px;
+    /* margin-left: 2%; */
+    /* padding-left: 2%; */
     color: white;
     font-size: 2em;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     width: 70%;
     /* height: 40px; */
     display: inline-block;
@@ -45,3 +49,23 @@
     color: white;
     font-size: 2em;
 } */
+
+@media only screen and (max-width: 768px) {
+    .player-guess-count,
+    .player-guess-history {
+        font-size: 1.8em;
+        width: 30%;
+    }
+    .guess-count-props,
+    .guess-history-props {
+        font-size: 1.8em;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 975px) {
+    .guess-count-props,
+    .guess-history-props {
+        padding-left: 4%;
+    }
+}

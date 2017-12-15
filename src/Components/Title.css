@@ -2,3 +2,11 @@
     margin-top: 0;
     color: lightskyblue;
 }
+
+@media only screen and (max-width: 768px) {
+	.title {
+        font-size: 2em;
+        margin-right: 45px;
+        margin-left: 45px;
+    }
+}

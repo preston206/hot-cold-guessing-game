@@ -2,9 +2,17 @@
     color: white;
     /* font-weight: bold; */
     font-size: 2.2em;
-    border: 1px solid gray;
-    width: 40%;
+    /* border: 1px solid gray; */
+    width: 50%;
     height: 40px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    #hot-cold-feedback {
+        font-size: 2em;
+        margin-bottom: 2px;
+    }
 }

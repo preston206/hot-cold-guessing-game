@@ -9,7 +9,7 @@ export default class BodyTop extends Component {
   render() {
     return (
       <div className="body">
-        <Form play={this.props.play} />
+        <Form play={this.props.play} input={this.props.input} updateInput={this.props.updateInput} />
       </div>
     );
   }
