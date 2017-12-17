@@ -4,6 +4,7 @@ import Logo from './Logo';
 import NewGame from './NewGame';
 import Title from './Title';
 import HotColdFeedback from './HotColdFeedback';
+
 import './Header.css';
 
 export default function Header(props) {

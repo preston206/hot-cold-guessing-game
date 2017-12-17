@@ -76,7 +76,7 @@ export default class App extends Component {
 
   restart() {
     this.setState({
-      randomNumber: Math.floor(Math.random() * 100),
+      randomNumber: Math.floor(Math.random() * 100) + 1,
       count: null,
       history: [],
       feedback: "let's play!",

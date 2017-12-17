@@ -1,11 +1,9 @@
 .header {
     background-color: #222;
-    /* height: 150px; */
     padding: 5px;
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
     margin-bottom: 15px;
-    /* margin-top: 10px; */
 }
 
 .header::after {

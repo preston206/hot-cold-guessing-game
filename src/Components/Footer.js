@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PlayerFeedback from './PlayerFeedback';
-// import NewGame from './NewGame';
+
 import './Footer.css';
 
-// convert to function?
-
-export default class Footer extends Component {
-  render() {
-    return (
-      <div className="footer">
-        <PlayerFeedback guessHistory={this.props.guessHistory} guessCount={this.props.guessCount}/>
-      </div>
-    );
-  }
+export default function Footer(props) {
+  return (
+    <div className="footer">
+      <PlayerFeedback guessHistory={props.guessHistory} guessCount={props.guessCount} />
+    </div>
+  );
 };

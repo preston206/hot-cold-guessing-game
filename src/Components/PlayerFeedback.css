@@ -1,5 +1,4 @@
 .player-feedback {
-    /* border: 2px solid black; */
     width: 100%;
     padding: 10px;
 }
@@ -15,7 +14,6 @@
     font-weight: bold;
     color: lightskyblue;
     font-size: 2em;
-    /* width: 30%; */
 }
 
 .player-guess-history {
@@ -23,32 +21,20 @@
     font-weight: bold;
     color: lightskyblue;
     font-size: 2em;
-    /* width: 30%; */
 }
 
 .guess-count-props,
 .guess-history-props {
     margin-top: 12px;
-    /* margin-left: 2%; */
-    /* padding-left: 2%; */
     color: white;
     font-size: 2em;
-    /* border: 1px solid gray; */
     width: 70%;
-    /* height: 40px; */
     display: inline-block;
     text-align: left;
     overflow-y: hidden;
     overflow-x: auto;
-    /* overflow-wrap: none; */
     white-space: nowrap;
 }
-
-
-/* .guess-history-props {
-    color: white;
-    font-size: 2em;
-} */
 
 @media only screen and (max-width: 768px) {
     .player-guess-count,

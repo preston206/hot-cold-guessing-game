@@ -1,6 +1,7 @@
 import React from 'react';
 
 import logo from '../Image/logo.svg';
+
 import './Logo.css';
 
 export default function Logo() {

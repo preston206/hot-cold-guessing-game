@@ -4,7 +4,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-	.title {
+    .title {
         font-size: 2em;
         margin-right: 45px;
         margin-left: 45px;
