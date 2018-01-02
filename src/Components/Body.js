@@ -4,7 +4,7 @@ import Form from './Form';
 
 import './Body.css';
 
-export default function BodyTop(props) {
+export default function Body(props) {
   return (
     <div className="body">
       <Form play={props.play} input={props.input} updateInput={props.updateInput} />
