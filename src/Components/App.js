@@ -28,23 +28,24 @@ export default class App extends Component {
   checkAnswer(answer) {
 
     let r = this.state.randomNumber;
+    let answerConvertedToNumber = Number(answer);
 
-    if (answer == r) {
+    if (answerConvertedToNumber === r) {
       this.setState({
         feedback: "You Won!"
       });
     }
-    else if ((answer >= r - 10) && (answer <= r + 10)) {
+    else if ((answerConvertedToNumber >= r - 10) && (answerConvertedToNumber <= r + 10)) {
       this.setState({
         feedback: "Hot"
       });
     }
-    else if (answer >= r - 20 && answer < r - 10) {
+    else if (answerConvertedToNumber >= r - 20 && answerConvertedToNumber < r - 10) {
       this.setState({
         feedback: "Warm"
       });
     }
-    else if (answer <= r + 20 && answer > r + 10) {
+    else if (answerConvertedToNumber <= r + 20 && answerConvertedToNumber > r + 10) {
       this.setState({
         feedback: "Warm"
       });

@@ -5,7 +5,7 @@ import './Form.css';
 export default class Form extends Component {
   handleSubmit(event) {
     event.preventDefault(event);
-    console.log(this.userInput.value);
+    // console.log(this.userInput.value);
     this.props.play(this.userInput.value);
   }
 
