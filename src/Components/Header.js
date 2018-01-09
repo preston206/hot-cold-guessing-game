@@ -16,7 +16,7 @@ export default function Header(props) {
       </div>
       <header className="header">
         <Title />
-        <HotColdFeedback feedback={props.feedback} />
+        <HotColdFeedback />
       </header>
     </div>
   );

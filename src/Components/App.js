@@ -1,102 +1,56 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import { connect } from 'react-redux';
+// components
 import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
-
+// actions
+import { restart, initialize } from '../Actions';
+// css
 import './App.css';
 
-// exporting...
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      randomNumber: Math.floor(Math.random() * 100),
-      count: null,
-      history: [],
-      feedback: "let's play!",
-      input: ''
-    };
-  }
 
-  updateInput(input) {
-    this.setState({
-      input
-    });
-  }
+// start component
+export class App extends React.Component {
 
-  checkAnswer(answer) {
-
-    let r = this.state.randomNumber;
-    let answerConvertedToNumber = Number(answer);
-
-    if (answerConvertedToNumber === r) {
-      this.setState({
-        feedback: "You Won!"
-      });
-    }
-    else if ((answerConvertedToNumber >= r - 10) && (answerConvertedToNumber <= r + 10)) {
-      this.setState({
-        feedback: "Hot"
-      });
-    }
-    else if (answerConvertedToNumber >= r - 20 && answerConvertedToNumber < r - 10) {
-      this.setState({
-        feedback: "Warm"
-      });
-    }
-    else if (answerConvertedToNumber <= r + 20 && answerConvertedToNumber > r + 10) {
-      this.setState({
-        feedback: "Warm"
-      });
-    }
-    else {
-      this.setState({
-        feedback: "Cold"
-      });
-    }
-  }
-
-  play(playerInput) {
-
-    this.setState({
-      history: [...this.state.history, playerInput],
-      input: playerInput
-    });
-
-    this.setState((prevState) => {
-      return { count: prevState.count + 1 }
-    });
-
-    if (playerInput) {
-      this.checkAnswer(playerInput)
-    };
-
-    console.log("the state is:", this.state);
+  componentDidMount() {
+    console.log("mounted");
+    console.log(this.props);
+    // initializing the state so a random number is generated
+    this.props.dispatch(initialize());
   }
 
   restart() {
-    this.setState({
+    // compiling payload
+    let payload = {
       randomNumber: Math.floor(Math.random() * 100) + 1,
-      count: null,
+      count: 0,
       history: [],
-      feedback: "let's play!",
-      input: ''
-    });
+      feedback: "let's play!"
+    }
+
+    // dispatching payload
+    this.props.dispatch(restart(payload));
+
     document.getElementById('numberInput').focus();
   }
 
   render() {
-    let guesses = this.state.history.map((guess, index) =>
-      <span key={index}>{guess} </span>
-    );
-
     return (
       <div className="app">
-        <Header feedback={this.state.feedback} restart={this.restart.bind(this)} />
-        <Body play={this.play.bind(this)} input={this.state.input} updateInput={this.updateInput.bind(this)} />
-        <Footer guessHistory={guesses} guessCount={this.state.count} />
+        <Header restart={this.restart.bind(this)} />
+        <Body />
+        <Footer />
       </div>
     );
   }
 };
+
+export const mapStateToProps = state => ({
+  randomNumber: state.randomNumber,
+  count: state.count,
+  history: state.history,
+  feedback: state.feedback
+});
+
+export default connect(mapStateToProps)(App);
