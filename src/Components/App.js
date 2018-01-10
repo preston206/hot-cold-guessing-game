@@ -5,7 +5,7 @@ import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
 // actions
-import { restart, initialize } from '../Actions';
+import { initialize } from '../Actions';
 // css
 import './App.css';
 
@@ -20,25 +20,10 @@ export class App extends React.Component {
     this.props.dispatch(initialize());
   }
 
-  restart() {
-    // compiling payload
-    let payload = {
-      randomNumber: Math.floor(Math.random() * 100) + 1,
-      count: 0,
-      history: [],
-      feedback: "let's play!"
-    }
-
-    // dispatching payload
-    this.props.dispatch(restart(payload));
-
-    document.getElementById('numberInput').focus();
-  }
-
   render() {
     return (
       <div className="app">
-        <Header restart={this.restart.bind(this)} />
+        <Header />
         <Body />
         <Footer />
       </div>

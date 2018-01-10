@@ -1,11 +1,12 @@
-import { CHECK_ANSWER, RESTART, INITIALIZE } from '../Actions';
+import { CHECK_ANSWER, RESTART, INITIALIZE, UPDATE_TEXT_FIELD } from '../Actions';
 
 const initialState = {
     randomNumber: Math.floor(Math.random() * 100),
     count: 0,
     history: [],
     feedback: "let's play!",
-    guess: null
+    guess: '',
+    inputValue: ''
 };
 
 export const reducer = (state = initialState, action) => {
@@ -43,10 +44,11 @@ export const reducer = (state = initialState, action) => {
 
         case RESTART:
             return Object.assign({}, state, {
-                randomNumber: action.randomNumber,
-                count: action.count,
-                history: action.history,
-                feedback: action.feedback
+                randomNumber: initialState.randomNumber,
+                count: initialState.count,
+                history: initialState.history,
+                feedback: initialState.feedback,
+                inputValue: initialState.inputValue
             });
 
         case INITIALIZE:
@@ -55,6 +57,11 @@ export const reducer = (state = initialState, action) => {
                 count: state.count,
                 history: state.history,
                 feedback: state.feedback
+            });
+
+        case UPDATE_TEXT_FIELD:
+            return Object.assign({}, state, {
+                inputValue: action.inputValue
             });
 
         default:

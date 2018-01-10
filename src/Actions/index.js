@@ -12,15 +12,18 @@ export const checkAnswer = guess => ({
     guess
 });
 
-export const RESTART = 'RESTART';
-export const restart = (randomNumber, history, feedback) => ({
-    type: RESTART,
-    randomNumber,
-    history,
-    feedback
-});
-
 export const INITIALIZE = 'INITIALIZE';
 export const initialize = () => ({
     type: INITIALIZE
+});
+
+export const RESTART = 'RESTART';
+export const restart = () => ({
+    type: RESTART
+});
+
+export const UPDATE_TEXT_FIELD = 'UPDATE_TEXT_FIELD';
+export const updateTextField = inputValue => ({
+    type: UPDATE_TEXT_FIELD,
+    inputValue
 });

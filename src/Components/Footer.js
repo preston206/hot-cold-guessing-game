@@ -6,9 +6,16 @@ import './Footer.css';
 export class Footer extends React.Component {
   render() {
 
-    let guesses = this.props.history.map((guess, index) =>
-      <span key={index}>{guess} </span>
-    );
+    let guesses;
+
+    if (this.props.history.length < 1) {
+      guesses = 0
+    }
+    else {
+      guesses = this.props.history.map((guess, index) =>
+        <span key={index}>{guess} </span>
+      );
+    }
 
     return (
       <div className="footer">

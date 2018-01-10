@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { checkAnswer } from '../Actions';
+import { checkAnswer, updateTextField } from '../Actions';
 
 import './Body.css';
 
@@ -15,11 +15,13 @@ export class Body extends React.Component {
     //   guess: this.userInput.value
     // };
 
-    // console.log("checkAnswerPayload: ", payload);
-
     // dispatching payload
     this.props.dispatch(checkAnswer(this.userInput.value));
-  };
+  }
+
+  handleChange(event) {
+    this.props.dispatch(updateTextField(this.userInput.value));
+  }
 
   render() {
     return (
@@ -34,6 +36,8 @@ export class Body extends React.Component {
             ref={val => this.userInput = val}
             min="1"
             max="100"
+            value={this.props.inputValue}
+            onChange={this.handleChange.bind(this)}
             autoFocus
             required
           />
@@ -45,7 +49,8 @@ export class Body extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  guess: state.guess
+  guess: state.guess,
+  inputValue: state.inputValue
 });
 
 export default connect(mapStateToProps)(Body);
