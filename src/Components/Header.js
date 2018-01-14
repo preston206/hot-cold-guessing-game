@@ -12,7 +12,7 @@ export default function Header(props) {
     <div>
       <div className="top-row-header">
         <Logo />
-        <NewGame restart={props.restart} />
+        <NewGame />
       </div>
       <header className="header">
         <Title />

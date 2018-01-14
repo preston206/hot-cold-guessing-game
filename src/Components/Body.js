@@ -16,7 +16,8 @@ export class Body extends React.Component {
     // };
 
     // dispatching payload
-    this.props.dispatch(checkAnswer(this.userInput.value));
+    let value = this.userInput.value;
+    this.props.dispatch(checkAnswer(value));
   }
 
   handleChange(event) {

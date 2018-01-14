@@ -44,7 +44,7 @@ export const reducer = (state = initialState, action) => {
 
         case RESTART:
             return Object.assign({}, state, {
-                randomNumber: initialState.randomNumber,
+                randomNumber: Math.floor(Math.random() * 100),
                 count: initialState.count,
                 history: initialState.history,
                 feedback: initialState.feedback,
@@ -53,10 +53,11 @@ export const reducer = (state = initialState, action) => {
 
         case INITIALIZE:
             return Object.assign({}, state, {
-                randomNumber: state.randomNumber,
-                count: state.count,
-                history: state.history,
-                feedback: state.feedback
+                randomNumber: initialState.randomNumber,
+                count: initialState.count,
+                history: initialState.history,
+                feedback: initialState.feedback,
+                inputValue: initialState.inputValue
             });
 
         case UPDATE_TEXT_FIELD:
